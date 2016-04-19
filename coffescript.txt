@@ -1,0 +1,47 @@
+<h3> Switch Statements </h3>
+	Switch statements in CoffeeScript are Ruby-esque
+	<code>
+		switch day
+			when "Mon" then go work
+			when "Tue" then go relax
+			when "Thu" then go iceFishing
+			when "Fri", "Sat"
+				if day is bingoDay
+					go bingo
+					go dancing
+			when "Sun" then go to church
+			else go work
+	</code>
+
+
+<h3> Embedding JavaScript </h3>
+	Pure Javascript can be embedded with the backtick (`).
+	hi = `function() {
+		return [document.title, "Hello JavaScript"].join(": ");
+	}`
+
+
+<h3> Compiling </h3>
+	Compiling a file:
+	<code> coffee --compile <file> <code>
+	For a more efficient workflow:
+	<code> coffee --watch --compile <file> </code>
+	More efficient:
+	<code> coffee -o workflow/ -cw src/ </code>
+
+
+<h3> Pros <h3>
+<ul>
+	<li> Can make JavaScript code shorter </li>
+	<li> More readable syntax than JavaScript </li>
+	<li> Fewer brackets and parantheses, no semicolons </li>
+</ul>
+
+
+<h3> Cons <h3>
+<ul>
+	<li> If you already are familiar with JavaScript, you would not need Coffeescript </li>
+	<li> A lot more people know JavaScript than CoffeeScript </li>
+	<li> Compiling is annoying; vague error messages from the coffee compilier </li>
+	<li> Debugging is hard when you have to match Coffeescript lines with the compiled JS lines </li>
+</ul>
