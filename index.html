@@ -10,7 +10,10 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
-    <script src="boop.css"></script>
+    <link href="src/prism.css" rel="stylesheet"/>
+    <script src="src/prism.js"></script>
+
+    <link href="boop.css" rel="stylesheet"/>
 
     <div class="navbar-fixed">
       <nav>
@@ -22,28 +25,127 @@
       </nav>
     </div>
 
+    <!-- Master Div -->
     <div class="container">
-      <h3> A Brief History </h3>
-      <ol>
-	<li>Created by Jeremy Ashkenas in 2009, CoffeeScript was designed as a ``little language that compiles into JavaScript''.</li>
-	<li>From December of 2009 to December of 2010, the project grew in size, attracting over 300 page hits on the site per day.</li>
-	<li>The syntax is primarily influenced by Python and Ruby, and the CoffeeScript compiler was initially written in Ruby before being re-written in Coffeescript.</li>
-      </ol>
-    </div>
-
-    <div class="container">
-      <h3>Installation</h3>
       
-      To Install (with npm):
-      <br>
-      <code>&nbsp;&nbsp;npm install -g coffee-script</code>
+      <!-- Slide 1 -->
+      <div class="row">
+	<h3> Introduction </h3>
+	<div class="container">
+	  Created by Jeremy Ashkenas in 2009, CoffeeScript was designed as a ``little language that compiles into JavaScript''. <br><br>
+	  From December of 2009 to December of 2010, the project grew in size, attracting over 300 page hits on the site per day. <br><br>
+	  The syntax is primarily influenced by Python and Ruby, and the CoffeeScript compiler was initially written in Ruby before being re-written in Coffeescript.
+	  </ol>
+	</div>
+      </div>
 
-      <br><br>
-      To Install (without npm):
-      <br>
-      <code>&nbsp;&nbsp;git clone https://github.com/jashkenas/coffeescript.git
-	<br>
-	&nbsp;&nbsp;sudo coffeescript/bin/cake install</code>
+      <!-- Slide 2 -->
+      <div class="row">
+	<h3>Installation</h3>
+	<div class="container">
+	  To Install (with npm):
+	  <pre><code class="language-bash">
+	  npm install -g coffee-script
+	  </code></pre>
+
+	  To Install (without npm):
+	  <pre><code class="language-bash">
+	  git clone https://github.com/jashkenas/coffeescript.git
+	  sudo coffeescript/bin/cake install
+	  </code></pre>
+	</div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="row">
+	<h3>Ease of use</h3>	
+	<div class="container">
+	  Assignment is easy in CoffeeScript; with Python-esque syntax:
+	  <pre><code class="language-javascript">
+	    number = 42;
+	    opposite = true;
+	  </code></pre>
+	  Functions are equally simple:
+	  <pre><code class="language-javascript">
+	    square = (x) -> x * x
+	    // This function squares "x"
+	  </code></pre>
+	  To call the function, you can either use <code class="language-javascript">square(3)</code> or <code class="language-javascript">square 3</code>. Parentheses are not necessary unless the function takes no parameters.
+	</div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="row">
+	<h3>Objects</h3>
+	<div class="container">
+	  Objects in CoffeeScript can be defined easily:
+	  <pre><code class="language-javascript">
+	  math =
+	    root: Math.sqrt
+	    square: square
+	    cube: (x) -> x * square x
+	  </code></pre>
+	  This code defines an object math, with functions <code>root</code>, <code>square</code>, and <code>cube</code>.
+	</div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="row">
+	<h3>Lists</h3>
+	<div class="container">
+	  Lists in CoffeeScript are defined the same way as they are in JavaScript:
+	  <pre><code class="language-javascript">
+	  list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+	  </code></pre>
+	  However, array splicing can be done using either "..", or "...". Two dots signify that it is inclusive, while three dots signify that the splicing will be exclusive. The first index is always included. <br><br>
+	  Ex:
+	  <pre><code class="language-javascript">
+	    list[0..2] // [1, 2, 3]
+	    list[0...2] // [1, 2]
+	  </code></pre>
+	  Negative indexing is supported.
+	  <pre><code class="language-javascript">
+	  middle = list[3...-2] // [4, 5, 6, 7]
+	  </code></pre>
+	</div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="row">
+	<h3>Aliases</h3>
+	<div class="container">
+	  A list of CoffeeScript expressions and its equivalent Javascript:
+	  <pre><code class="language-javascript">
+	  is // ===
+	  isnt // !==
+	  not // !
+	  and // &&
+	  or // ||
+	  true, yes, on // true
+	  false, no, off // false
+	  @, this // this
+	  of // in
+	  a ** b // Math.pow(a,b)
+	  </code></pre>
+	</div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="row">
+	<h3>Boolean Operators</h3>
+	<div class="container">
+	  Boolean Operators in CoffeeScript are very literal, and easily understood:
+	  <pre><code class="language-javascript">
+	  status = good if happy // status = good, if happy == true
+
+	  if happy and glad
+	    nap()
+	    sleep()
+	  </code></pre>
+	  Similarly to Python, indentation is extremely important. However, there are no colons.
+	</div>
+      </div>
+      
     </div>
   </body>
 </html>
