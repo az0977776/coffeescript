@@ -146,6 +146,111 @@
 	</div>
       </div>
       
-    </div>
+      
+      <div class="row">
+	<h3> Switch Statements </h3>
+	<div class="container"> 
+	  Switch statements in CoffeeScript are Ruby-esque
+	  <pre><code class="language-javascript">
+	      switch day
+	         when "Mon" then go work
+	         when "Tue" then go relax
+	         when "Thu" then go iceFishing
+	         when "Fri", "Sat"
+	            if day is bingoDay
+	               go bingo
+	               go dancing
+	         when "Sun" then go to church
+	         else go work
+	</code></pre>
+	</div>
+      </div>
+	
+
+      <div class="row">
+	<h3> Embedding JavaScript </h3>
+	<div class="container">
+	Pure Javascript can be embedded with the backtick (`).
+	<pre><code class="language-javascript">
+	hi = `function() {
+		return [document.title, "Hello JavaScript"].join(": ");
+	}`
+	</code></pre>
+	</div>
+      </div>
+
+      <div class="row">
+	<h3> Example Code </h3>
+	<div class="container">
+	  
+	  <pre><code class="language-coffeescript">
+	      countdown = (num for num in [10..1])
+	  </code></pre>
+	  The code in coffeescript compiles into the following code in Javascript.
+	  
+	  <pre><code class="language-javascript">
+	      var countdown, num;
+	      
+	      countdown = (function() {
+	         var i, results;
+	         results = [];
+	         for (num = i = 10; i >= 1; num = --i) {
+	            results.push(num);
+	         }
+	         return results;
+	      })();
+	  </code></pre>
+	  
+	  Javascript creates a while loop and creates all the variables to create a list of integers from 10 to 1.
+	  <br><br>
+	  Output : [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+	</div>
+      </div>
+      
+      <div class="row">
+	<h3> Compiling </h3>
+	<div class="container">
+	  Compiling a file:
+	  <pre><code class="language-bash"> coffee --compile <file> </code></pre>
+	  For a more efficient workflow:
+	  <br>Automatically compiles the file if altered
+	  <pre><code class="language-bash"> coffee --watch --compile &lt;file&gt; </code></pre>
+	  More efficient: 
+	  <br>Automatically compiles the files to src/
+	  <pre><code class="language-bash"> coffee -o workflow/ -cw src/ </code><pre>
+	</div>
+      </div>
+
+
+      <div class="row">
+	<h3> Pros </h3>
+	<div class="container">
+	  <ul>
+	    <li> Can make JavaScript code shorter </li>
+	    <br><br>
+	    <li> More readable syntax than JavaScript </li>
+	    <br><br>
+	    <li> Fewer brackets and parantheses, no semicolons </li>
+	  </ul>
+	</div>
+      </div>
+
+
+      <div class="row">
+	<h3> Cons </h3>
+	<div class="container">
+	  <ul>
+	    <li> If you already are familiar with JavaScript, you would not need Coffeescript </li>
+	    <br><br>
+	    <li> A lot more people know JavaScript than CoffeeScript </li>
+	    <br><br>
+	    <li> Compiling is annoying; vague error messages from the coffee compilier </li>
+	    <br><br>
+	    <li> Debugging is hard when you have to match Coffeescript lines with the compiled JS lines </li>
+	  </ul>
+	</div>
+      </div>
+
   </body>
 </html>
